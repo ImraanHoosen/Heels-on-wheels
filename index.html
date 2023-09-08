@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Heels on Wheels</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #rgb(14, 14, 14);
+            text-align: center;
+        }
+
+        .countdown-container {
+            background-color: #023047f1;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px 10px 10px 10px;
+            margin: 10px auto;
+            max-width: 350px;
+        }
+
+        .countdown {
+            font-size: 40px;
+            font-weight: 100;
+            color: #FF8800;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav orange sticky">
+        <ul class="main-nav">
+            <li><a href="index.html"><b>Heels On Wheels</b></a></li>
+            <li><a href="thevision.html"><B>The Vision</B></a></li>
+            <li><a href="theteam.html"><B>The Team</B></a></li>
+        </ul>
+    </nav>
+
+    <div class="container zone"><img class="cover" src="heels2.jpg"></div>
+
+    <h1><strong><i>THE COUNTDOWN HAS BEGUN!</strong></i></h1>
+
+    <div class="countdown-container">
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <script>
+        // Set the target date and time (customize this)
+        const targetDate = new Date('2023-10-01T08:59:59').getTime();
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeLeft = targetDate - currentDate;
+
+            if (timeLeft <= 0) {
+                document.getElementById('countdown').innerHTML = 'Countdown expired!';
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                const countdownString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                document.getElementById('countdown').innerHTML = countdownString;
+            }
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Initial update
+        updateCountdown();
+    </script>
+
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="footer.sticky">©2023 All Rights Reserved. HCodez®</footer>
+
+</body>
+</html>
